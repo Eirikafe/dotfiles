@@ -36,6 +36,14 @@ set $urgent-bg-color     #E53935
 # Disable titles
 for_window [class=".*"] border pixel 0
 
+# Homepage setup
+exec_always --no-startup-id i3-msg "workspace"1: Home "; append_layout ~/.i3/workspace1.json; exec urxvt -name ranger -e ranger; exec urxvt -name htop -e htop; exec urxvt -hold -name neofetch -e neofetch --w3m ~/Pictures/wallpaper.png --loop --colors 657 --color_blocks off"
+#exec_always --no-startup-id urxvt -name ranger -e ranger
+#exec_always --no-startup-id urxvt -e htop
+#exec_always --no-startup-id urxvt -hold -e neofetch
+
+#exec_always --no-startup-id i3-msg "workspace"1: Home "; exec urxvt -e ranger; exec urxvt -hold -e neofetch; split horizontal; exec urxvt -e htop"
+
 # Run compton at launch
 exec_always --no-startup-id compton -f
 # Natural scrolling
